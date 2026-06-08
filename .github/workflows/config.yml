@@ -26,7 +26,7 @@ cross_page_chars_per_page: 4000
 max_chars: 60000
 max_tokens: 8000
 
-fact_check_with_web_search: false
+fact_check_with_web_search: true
 web_search_max_uses: 3
 
 # ---- Site-wide house style (used by the cross-page consistency pass) --------
@@ -90,13 +90,13 @@ pages:
   # High-churn pages: monitored less for editorial polish since they change
   # often (the change-hash means unchanged runs are free anyway). Uncomment to
   # include — expect a noisier first run.
-   - url: https://runlaminar.com/blog
-  #   name: Blog index
-   - url: https://runlaminar.com/case-studies
-  #   name: Case Studies index
-   - url: https://runlaminar.com/resource-center
-  #   name: Resource Center
-   - url: https://runlaminar.com/in-the-news
-  #   name: Company News
-   - url: https://runlaminar.com/careers
-  #   name: Careers
+  - url: https://runlaminar.com/blog
+    name: Blog index
+  - url: https://runlaminar.com/case-studies
+    name: Case Studies index
+  - url: https://runlaminar.com/resource-center
+    name: Resource Center
+  - url: https://runlaminar.com/in-the-news
+    name: Company News
+  - url: https://runlaminar.com/careers
+    name: Careers

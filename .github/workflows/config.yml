@@ -1,0 +1,102 @@
+# config.yaml — runlaminar.com
+# ---------------------------------------------------------------------------
+# Generated from the live site. Review the house_rules below: where the site is
+# currently inconsistent I picked the form that looked intended — change it if
+# your canonical style differs, since the checker flags deviations from these.
+
+model: claude-sonnet-4-6
+
+categories:
+  - english
+  - formatting
+  - correctness
+  - consistency
+  # "layout" is added automatically for any page rendered with a screenshot.
+
+alert_on_severity: medium
+
+# The site is Webflow with video/JS, so render in a real browser. This also
+# enables the visual "layout" check. Needs: playwright install chromium
+render: true
+viewport_width: 1280
+
+cross_page_consistency: true
+cross_page_chars_per_page: 4000
+
+max_chars: 60000
+max_tokens: 8000
+
+fact_check_with_web_search: false
+web_search_max_uses: 3
+
+# ---- Site-wide house style (used by the cross-page consistency pass) --------
+# NOTE: confirm each of these — several are places the site is currently
+# inconsistent, which is exactly what the cross-page check will surface.
+house_rules:
+  - "The company/product name is always 'Laminar' (capitalized); never 'laminar' or 'LAMINAR'."
+  - "Use American English spelling."
+  - "Use the Oxford comma in lists of three or more."
+  - "Dates use the format 'February 5, 2026' (full month name, day, year)."
+  - "Abbreviation is 'CIP' (all caps); when written out use 'clean-in-place' (lowercase, hyphenated) in body text."
+  - "Use 'OPEX' (all caps) consistently; do not mix with 'Opex'."
+  - "Write 'consumer packaged goods' without a hyphen; abbreviation 'CPG'."
+  - "Use 'F&B' as the abbreviation; spelled out it is 'food and beverage'."
+  - "Write 'SKU' / 'SKUs' in all caps."
+  - "Refer to the product capability as 'ML models' / 'AI', used consistently across pages."
+
+# ---- Pages ------------------------------------------------------------------
+pages:
+  - url: https://runlaminar.com/
+    name: Homepage
+
+  # Solutions
+  - url: https://runlaminar.com/solutions/clean-in-place
+    name: Solutions — Clean-in-Place
+  - url: https://runlaminar.com/solutions/product-changeover-optimization
+    name: Solutions — Product Changeover
+  - url: https://runlaminar.com/solutions/batch-optimization
+    name: Solutions — Batch & Line Optimization
+  - url: https://runlaminar.com/solutions/real-time-quality-analysis
+    name: Solutions — Real-time Quality Analysis
+
+  # Industries
+  - url: https://runlaminar.com/industries/food-beverage
+    name: Industries — Food & Beverage
+  - url: https://runlaminar.com/industries/flavor-fragrance
+    name: Industries — Flavor & Fragrance
+  - url: https://runlaminar.com/industries/breweries
+    name: Industries — Brewing
+  - url: https://runlaminar.com/industries/health-beauty
+    name: Industries — Health & Beauty
+  - url: https://runlaminar.com/industries/consumer-packaged-goods-cpg
+    name: Industries — Consumer Packaged Goods
+
+  # Technology
+  - url: https://runlaminar.com/how-it-works
+    name: How it Works
+  - url: https://runlaminar.com/key-specs
+    name: Key Specs
+  - url: https://runlaminar.com/tech/deployment
+    name: Deployment
+
+  # Company
+  - url: https://runlaminar.com/about
+    name: About
+  - url: https://runlaminar.com/frequently-asked-questions
+    name: FAQ
+  - url: https://runlaminar.com/contact
+    name: Contact / Book a Demo
+
+  # High-churn pages: monitored less for editorial polish since they change
+  # often (the change-hash means unchanged runs are free anyway). Uncomment to
+  # include — expect a noisier first run.
+   - url: https://runlaminar.com/blog
+  #   name: Blog index
+   - url: https://runlaminar.com/case-studies
+  #   name: Case Studies index
+   - url: https://runlaminar.com/resource-center
+  #   name: Resource Center
+   - url: https://runlaminar.com/in-the-news
+  #   name: Company News
+   - url: https://runlaminar.com/careers
+  #   name: Careers
